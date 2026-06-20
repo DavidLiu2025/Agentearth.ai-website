@@ -17,6 +17,7 @@ dist/
 build/
 .next/
 out/
+tmp/
 
 # Environment files
 .env
