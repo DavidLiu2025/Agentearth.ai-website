@@ -58,31 +58,31 @@ const copy = {
       languageHref: 'zh/'
     },
     hero: {
-      eyebrow: 'Agent Internet Infra',
-      title: 'The external service execution layer for AI agents.',
-      titleLines: null,
+      eyebrow: 'Agent Internet Infrastructure',
+      title: 'Reliable external service execution for AI agents.',
+      titleLines: ['Reliable external', 'service execution', 'for AI agents.'],
       subtitle:
-        'AgentEarth helps agent teams discover, connect, govern, route, and reliably execute MCP, API, Skill, Workflow, and Agent Service capabilities through one enterprise-grade platform.',
+        'AgentEarth gives product and enterprise AI teams one governed execution layer for MCP, API, Skill, Workflow, and Agent Service capabilities: discovery, access, routing, observability, fallback, and provider operations.',
       subtitleLines: null,
-      primary: 'Book a platform briefing',
-      secondary: 'View developer path',
-      panelTitle: 'Runtime execution path',
-      panelStatus: 'Live routing',
+      primary: 'Book an execution review',
+      secondary: 'See the platform',
+      panelTitle: 'Agent execution control plane',
+      panelStatus: 'Policy-aware routing',
       columns: {
-        agent: ['Agent Runtime', 'Intent', 'Context'],
-        platform: ['AgentEarth', 'Recommend', 'Route', 'Fallback'],
-        service: ['External Services', 'MCP', 'API', 'Workflow']
+        agent: ['Agent Runtime', 'Intent', 'Context', 'Policy'],
+        platform: ['AgentEarth', 'Recommend', 'Govern', 'Route', 'Fallback'],
+        service: ['External Services', 'MCP', 'API', 'Workflow', 'SaaS']
       },
       signals: [
-        ['success rate', 'Optimized'],
-        ['latency', 'Observed'],
-        ['service state', 'Observed'],
-        ['cost per task', 'Observed']
+        ['task success', 'Measured'],
+        ['service health', 'Observed'],
+        ['fallback', 'Available'],
+        ['cost per outcome', 'Optimized']
       ],
       proofPoints: [
-        { value: '1,300+', label: 'agent-ready tools and services' },
-        { value: 'MCP / API / Skill', label: 'native external capability access' },
-        { value: 'Runtime-first', label: 'routing, fallback, and observability' }
+        { value: '5 layers', label: 'gateway, warehouse, recommendation, routing, provider ops' },
+        { value: 'MCP + API', label: 'agent-native and enterprise integration paths' },
+        { value: 'Task-level', label: 'success, fallback, latency, and cost observability' }
       ]
     },
     problem: {
@@ -208,6 +208,29 @@ const copy = {
           title: 'Reusable capability intelligence',
           text:
             'Turn service metadata, behavior logs, schemas, and performance history into a durable routing and matching advantage.'
+        }
+      ]
+    },
+    evidence: {
+      eyebrow: 'Evaluation evidence',
+      title: 'A production agent needs proof at the execution layer, not a longer tool catalog.',
+      text:
+        'Top enterprise platforms are evaluated by operational control, integration depth, governance, and measurable business outcomes. AgentEarth applies the same standard to external-service execution for agents.',
+      cards: [
+        {
+          value: '01',
+          title: 'Task completion before tool count',
+          text: 'Measure whether multi-step external actions complete, degrade, or fail. A larger catalog is useful only when it improves successful task outcomes.'
+        },
+        {
+          value: '02',
+          title: 'Governance before scale',
+          text: 'Bring auth, schema quality, version compatibility, entitlement, service status, and provider quality into one operating model.'
+        },
+        {
+          value: '03',
+          title: 'Runtime control before workflow sprawl',
+          text: 'Keep agents dynamic while moving service choice, routing, retry, fallback, and observability into a shared execution layer.'
         }
       ]
     },
@@ -391,34 +414,34 @@ const copy = {
     },
     hero: {
       eyebrow: 'Agent Internet Infra',
-      title: '面向 agent 的外部服务 execution layer。',
-      titleLines: ['面向 agent 的', '外部服务', 'execution layer。'],
+      title: '让 AI agents 稳定执行外部服务调用。',
+      titleLines: ['让 AI agents', '稳定执行', '外部服务调用。'],
       subtitle:
-        'AgentEarth 帮助 agent 团队发现、接入、治理、 routing 并稳定执行 MCP、API、Skill、Workflow 与 Agent Service capability，形成企业级外部服务执行平台。',
+        'AgentEarth 为产品团队和企业 AI 团队提供统一的外部服务 execution layer，覆盖 MCP、API、Skill、Workflow 与 Agent Service 的发现、接入、治理、routing、可观测和 fallback。',
       subtitleLines: [
-        'AgentEarth 帮助 agent 团队发现、接入、治理、 routing，',
-        '并稳定执行 MCP、API、Skill、Workflow 与 Agent Service capability，',
-        '形成企业级外部服务执行平台。'
+        'AgentEarth 为产品团队和企业 AI 团队提供统一的外部服务 execution layer，',
+        '覆盖 MCP、API、Skill、Workflow 与 Agent Service 的发现、接入、治理、',
+        'routing、可观测和 fallback。'
       ],
-      primary: '预约平台介绍',
-      secondary: '查看开发者路径',
-      panelTitle: 'Runtime 执行链路',
-      panelStatus: '实时 routing',
+      primary: '预约执行链路评估',
+      secondary: '查看平台架构',
+      panelTitle: 'Agent execution control plane',
+      panelStatus: '策略化 routing',
       columns: {
-        agent: ['Agent Runtime', '任务意图', '上下文'],
-        platform: ['AgentEarth', '推荐', 'Route', 'Fallback'],
-        service: ['外部服务', 'MCP', 'API', 'Workflow']
+        agent: ['Agent Runtime', '任务意图', '上下文', '权限策略'],
+        platform: ['AgentEarth', '推荐', '治理', 'Route', 'Fallback'],
+        service: ['外部服务', 'MCP', 'API', 'Workflow', 'SaaS']
       },
       signals: [
-        ['成功率', '优化中'],
-        ['延迟', '可观测'],
-        ['服务状态', '可观测'],
-        ['任务成本', '可观测']
+        ['任务完成率', '可衡量'],
+        ['服务健康', '可观测'],
+        ['Fallback', '可用'],
+        ['结果成本', '可优化']
       ],
       proofPoints: [
-        { value: '1,300+', label: 'agent-ready 工具与服务' },
-        { value: 'MCP / API / Skill', label: '原生外部 capability 接入' },
-        { value: 'Runtime-first', label: 'routing、fallback 与可观测' }
+        { value: '5 层架构', label: 'gateway、能力仓库、推荐、routing、供给侧运营' },
+        { value: 'MCP + API', label: '兼容 agent-native 与企业系统接入路径' },
+        { value: '任务级指标', label: '成功率、fallback、延迟与成本可观测' }
       ]
     },
     problem: {
@@ -537,6 +560,29 @@ const copy = {
           icon: DatabaseZap,
           title: '可复用 capability intelligence',
           text: '把服务 metadata、行为日志、schema 和性能历史沉淀为长期 routing 与匹配优势。'
+        }
+      ]
+    },
+    evidence: {
+      eyebrow: 'Evaluation evidence',
+      title: '生产级 agent 需要验证 execution layer，而不是验证工具目录有多长。',
+      text:
+        '顶级 To B 平台的评估标准不是功能数量，而是运营控制、集成深度、治理能力和可衡量业务结果。AgentEarth 把同样标准用于 agent 外部服务执行。',
+      cards: [
+        {
+          value: '01',
+          title: '先看任务完成率，再看工具数量',
+          text: '衡量多步外部动作是完成、降级还是失败。只有能提升 successful task outcome 的工具供给才有价值。'
+        },
+        {
+          value: '02',
+          title: '先治理，再规模化',
+          text: '把鉴权、schema 质量、版本兼容、权限边界、服务状态和供给侧质量纳入同一套运营模型。'
+        },
+        {
+          value: '03',
+          title: '先 runtime control，再扩 workflow',
+          text: '保留 agent 的动态性，同时把服务选择、routing、retry、fallback 和可观测沉淀为共享 execution layer。'
         }
       ]
     },
@@ -723,10 +769,16 @@ const hrefByFooterLabel = {
 const cn2 = {
   nav: [
     { label: '首页', href: '#top' },
-    { label: '解决什么', href: '#problems' },
-    { label: '产品能力', href: '#product' },
-    { label: '适用场景', href: '#scenarios' },
-    { label: '验证路径', href: '#poc' }
+    { label: '判断', href: '#problems' },
+    { label: '边界', href: '#boundary' },
+    { label: '产品', href: '#product' },
+    { label: '场景', href: '#scenarios' },
+    { label: '验证', href: '#poc' }
+  ],
+  heroStats: [
+    ['不是', '工具市场'],
+    ['不是', '普通 API gateway'],
+    ['定位', '外部服务 execution layer']
   ],
   heroSignals: [
     '已经接入多个 MCP / API / Workflow',
@@ -736,17 +788,23 @@ const cn2 = {
   ],
   pressureCards: [
     {
-      title: '接入不是一次性工程',
+      title: 'Demo 阶段关注“能不能调通”',
       text: '国内团队常见起点是先接几个 API 或 MCP 跑通 demo，但上线后会立刻遇到鉴权、参数、版本、限流、返回结构和服务状态变化。'
     },
     {
-      title: '服务质量会变成产品质量',
+      title: '上线阶段关注“能不能稳定完成”',
       text: 'agent 调用搜索、数据、文件、企业系统和第三方 SaaS 时，任何一个服务超时、失败或结果异常，都会表现为 agent 没完成任务。'
     },
     {
-      title: '工具越多，runtime 越难维护',
+      title: '规模化阶段关注“谁来治理复杂度”',
       text: '服务数量增长后，靠人工分类、关键词规则和硬编码选择工具，很快会变成维护成本和稳定性风险。'
     }
+  ],
+  buyerCards: [
+    ['产品负责人', '看任务完成率、用户体验，以及从 demo 到规模化上线的稳定性边界。'],
+    ['技术负责人', '看 schema、权限、routing、fallback、可观测，以及与现有系统的集成成本。'],
+    ['业务负责人', '看是否能把更多真实业务动作交给 agent，而不是停留在问答和内容生成。'],
+    ['采购 / 管理层', '看 POC 是否有清晰范围、指标、风险边界和后续扩展路径。']
   ],
   differences: [
     ['不是工具市场', '重点不是陈列更多工具，而是让外部服务进入 agent runtime 后可治理、可匹配、可稳定调用。'],
@@ -813,6 +871,12 @@ const cn2 = {
     ['列出服务清单', '明确涉及哪些 MCP、API、Skill、Workflow、Agent Service，以及当前失败点。'],
     ['看任务级指标', '不要只看单次 API 延迟，重点看任务完成率、失败原因、fallback 效果和维护成本。'],
     ['决定是否规模化接入', '如果稳定性、接入效率或维护成本改善明显，再扩展到更多服务和场景。']
+  ],
+  deliverables: [
+    '当前外部服务调用链路图',
+    '失败点与 fallback 清单',
+    'AgentEarth 接入范围建议',
+    '任务级 POC 指标表'
   ]
 };
 
@@ -830,6 +894,7 @@ function App() {
       <ProblemSection site={site} />
       <PlatformSection site={site} />
       <OutcomesSection site={site} />
+      <EvidenceSection site={site} />
       <SolutionsSection site={site} />
       <DevelopersSection site={site} />
       <TrustSection site={site} />
@@ -886,6 +951,14 @@ function ChinaSecondVersion() {
                 看产品能力
               </a>
             </div>
+            <div className="cn2-hero-stats" aria-label="AgentEarth 定位">
+              {cn2.heroStats.map(([label, value]) => (
+                <div key={value}>
+                  <span>{label}</span>
+                  <strong>{value}</strong>
+                </div>
+              ))}
+            </div>
           </div>
           <div className="cn2-diagnosis">
             <div className="cn2-diagnosis-head">
@@ -921,10 +994,18 @@ function ChinaSecondVersion() {
               </article>
             ))}
           </div>
+          <div className="cn2-buyer-grid">
+            {cn2.buyerCards.map(([role, text]) => (
+              <article key={role}>
+                <h3>{role}</h3>
+                <p>{text}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="cn2-section cn2-compare">
+      <section id="boundary" className="cn2-section cn2-compare">
         <div className="container cn2-split">
           <div>
             <div className="cn2-eyebrow">先把边界说清楚</div>
@@ -1004,6 +1085,12 @@ function ChinaSecondVersion() {
                   <p>{text}</p>
                 </div>
               </article>
+            ))}
+          </div>
+          <div className="cn2-deliverables">
+            <h3>一次有效评估应该产出什么</h3>
+            {cn2.deliverables.map((item) => (
+              <span key={item}>{item}</span>
             ))}
           </div>
         </div>
@@ -1275,6 +1362,25 @@ function OutcomesSection({ site }) {
           {site.outcomes.cards.map((item) => (
             <article className="outcome-card" key={item.title}>
               <IconBox icon={item.icon} />
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function EvidenceSection({ site }) {
+  return (
+    <section className="section evidence-section">
+      <div className="container">
+        <SectionHeading {...site.evidence} />
+        <div className="evidence-grid">
+          {site.evidence.cards.map((item) => (
+            <article className="evidence-card" key={item.title}>
+              <span>{item.value}</span>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
             </article>
