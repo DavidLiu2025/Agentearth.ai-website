@@ -376,6 +376,19 @@ const copy = {
         }
       ]
     },
+    evaluation: {
+      eyebrow: 'Deployment path',
+      title: 'Start narrow, prove the execution layer, then expand across service categories.',
+      text:
+        'The best enterprise evaluation is a controlled production-like chain with measurable inputs, service state, fallback behavior, and task-level outcomes.',
+      stages: [
+        ['01', 'Scope one chain', 'Pick a task that already depends on two or more external services and has visible failure modes.'],
+        ['02', 'Normalize service access', 'Connect MCP, API, Workflow, or Agent Service endpoints through a governed entry point.'],
+        ['03', 'Measure execution quality', 'Track completion rate, latency, fallback, failed calls, service health, and cost per successful task.'],
+        ['04', 'Expand with governance', 'Move from one chain to more service categories once routing and fallback prove value.']
+      ],
+      outputs: ['Service inventory', 'Fallback model', 'Routing policy', 'Task outcome dashboard']
+    },
     cta: {
       eyebrow: 'Evaluation path',
       title: 'Start with one real external-service execution chain.',
@@ -722,6 +735,19 @@ const copy = {
         }
       ]
     },
+    evaluation: {
+      eyebrow: 'Deployment path',
+      title: '先用一条链路验证 execution layer，再扩展到更多服务类别。',
+      text:
+        '最有效的企业评估不是泛泛试用，而是选择一条接近生产环境的真实链路，明确输入、服务状态、fallback 行为和任务级结果。',
+      stages: [
+        ['01', '限定一条链路', '选择一个已经依赖两个以上外部服务、并且失败模式清晰的任务。'],
+        ['02', '统一服务接入', '把 MCP、API、Workflow 或 Agent Service endpoint 接入到受治理的统一入口。'],
+        ['03', '衡量执行质量', '跟踪完成率、延迟、fallback、失败调用、服务健康和 Cost per Successful Task。'],
+        ['04', '带治理扩展', '当 routing 与 fallback 证明价值后，再扩展到更多服务类别。']
+      ],
+      outputs: ['服务清单', 'Fallback 模型', 'Routing 策略', '任务结果看板']
+    },
     cta: {
       eyebrow: 'Evaluation path',
       title: '从一条真实外部服务执行链路开始验证。',
@@ -877,6 +903,12 @@ const cn2 = {
     '失败点与 fallback 清单',
     'AgentEarth 接入范围建议',
     '任务级 POC 指标表'
+  ],
+  rollout: [
+    ['接入范围', '先选 1 条真实任务链路，不要求一次性接完整工具平台。'],
+    ['技术前提', '明确涉及的 MCP、API、Workflow、权限方式、调用频率和失败日志。'],
+    ['验证指标', '看任务完成率、失败定位时间、fallback 命中、维护成本和扩展复杂度。'],
+    ['边界说明', '不替代模型、不替代业务系统、不承诺所有外部服务质量由平台单方面控制。']
   ]
 };
 
@@ -899,6 +931,7 @@ function App() {
       <DevelopersSection site={site} />
       <TrustSection site={site} />
       <ResourcesSection site={site} />
+      <EvaluationSection site={site} />
       <CtaSection site={site} />
       <Footer site={site} />
     </main>
@@ -1061,6 +1094,26 @@ function ChinaSecondVersion() {
                 <h3>{scenario.title}</h3>
                 <p>{scenario.text}</p>
                 <strong>{scenario.result}</strong>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="cn2-section cn2-rollout">
+        <div className="container">
+          <div className="cn2-section-head">
+            <span>实施边界</span>
+            <h2>国内客户最需要先确认的，不是平台有多少能力，而是第一条链路怎么验证。</h2>
+            <p>
+              AgentEarth 更适合从真实任务链路切入：先确认服务清单、失败点、权限方式和任务级指标，再判断是否进入规模化接入。
+            </p>
+          </div>
+          <div className="cn2-rollout-grid">
+            {cn2.rollout.map(([title, text]) => (
+              <article key={title}>
+                <h3>{title}</h3>
+                <p>{text}</p>
               </article>
             ))}
           </div>
@@ -1523,6 +1576,39 @@ function ResourcesSection({ site }) {
                 {resource.cta}
                 <ArrowRight size={16} />
               </a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function EvaluationSection({ site }) {
+  return (
+    <section className="section evaluation-section">
+      <div className="container evaluation-wrap">
+        <div>
+          <div className="eyebrow eyebrow-dark">
+            <Workflow size={14} />
+            {site.evaluation.eyebrow}
+          </div>
+          <h2>{site.evaluation.title}</h2>
+          <p>{site.evaluation.text}</p>
+          <div className="evaluation-output" aria-label="Evaluation outputs">
+            {site.evaluation.outputs.map((item) => (
+              <span key={item}>{item}</span>
+            ))}
+          </div>
+        </div>
+        <div className="evaluation-steps">
+          {site.evaluation.stages.map(([num, title, text]) => (
+            <article key={num}>
+              <strong>{num}</strong>
+              <div>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </div>
             </article>
           ))}
         </div>
