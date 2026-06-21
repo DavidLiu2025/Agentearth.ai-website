@@ -284,6 +284,29 @@ h1 {
   font-size: clamp(3.2rem, 7vw, 6.9rem);
   line-height: 0.92;
   letter-spacing: 0;
+  overflow-wrap: break-word;
+}
+
+.locale-zh h1 {
+  max-width: 760px;
+  font-size: clamp(3rem, 6.2vw, 5.65rem);
+  line-height: 1.02;
+}
+
+.title-line {
+  display: block;
+}
+
+.subtitle-line {
+  display: block;
+}
+
+.locale-zh .hero-subtitle,
+.locale-zh p,
+.locale-zh li,
+.locale-zh .arch-badge,
+.locale-zh .mini-node {
+  overflow-wrap: anywhere;
 }
 
 h2 {
@@ -1170,6 +1193,18 @@ pre {
   h1 {
     font-size: clamp(2.85rem, 14vw, 4rem);
   }
+
+  .locale-zh h1 {
+    font-size: clamp(2.45rem, 10.2vw, 2.8rem);
+    line-height: 1.08;
+  }
+
+  .locale-zh .hero-subtitle {
+    max-width: 340px;
+    font-size: 0.94rem;
+    line-height: 1.58;
+  }
+
 
   h2 {
     font-size: clamp(2rem, 11vw, 3rem);
