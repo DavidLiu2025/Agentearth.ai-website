@@ -230,7 +230,7 @@ main {
   background:
     linear-gradient(90deg, rgba(8, 16, 15, 0.96) 0%, rgba(8, 16, 15, 0.83) 36%, rgba(8, 16, 15, 0.18) 100%),
     linear-gradient(180deg, rgba(8, 16, 15, 0) 72%, #08100f 100%),
-    url('/assets/agentearth-hero-network.png') center right / cover no-repeat;
+    url('./assets/agentearth-hero-network.png') center right / cover no-repeat;
 }
 
 .hero-overlay {
@@ -1164,7 +1164,7 @@ pre {
   .hero-background {
     background:
       linear-gradient(180deg, rgba(8, 16, 15, 0.94) 0%, rgba(8, 16, 15, 0.84) 48%, #08100f 100%),
-      url('/assets/agentearth-hero-network.png') center top / cover no-repeat;
+      url('./assets/agentearth-hero-network.png') center top / cover no-repeat;
   }
 
   h1 {
