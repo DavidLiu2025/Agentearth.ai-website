@@ -34,9 +34,10 @@ import {
 } from 'lucide-react';
 import './styles.css';
 
-const currentLang =
-  document.documentElement.lang?.toLowerCase().startsWith('zh') ||
-  window.location.pathname.includes('/zh/')
+const currentPath = window.location.pathname;
+const currentPage = currentPath.includes('/zh-cn/')
+  ? 'zh-cn'
+  : document.documentElement.lang?.toLowerCase().startsWith('zh') || currentPath.includes('/zh/')
     ? 'zh'
     : 'en';
 
@@ -719,8 +720,108 @@ const hrefByFooterLabel = {
   登录: 'https://www.agentearth.ai/login'
 };
 
+const cn2 = {
+  nav: [
+    { label: '首页', href: '#top' },
+    { label: '解决什么', href: '#problems' },
+    { label: '产品能力', href: '#product' },
+    { label: '适用场景', href: '#scenarios' },
+    { label: '验证路径', href: '#poc' }
+  ],
+  heroSignals: [
+    '已经接入多个 MCP / API / Workflow',
+    '外部服务失败会直接影响用户体验',
+    '团队开始自建 retry、fallback、监控或工具选择规则',
+    '业务要从 demo 进入真实任务执行'
+  ],
+  pressureCards: [
+    {
+      title: '接入不是一次性工程',
+      text: '国内团队常见起点是先接几个 API 或 MCP 跑通 demo，但上线后会立刻遇到鉴权、参数、版本、限流、返回结构和服务状态变化。'
+    },
+    {
+      title: '服务质量会变成产品质量',
+      text: 'agent 调用搜索、数据、文件、企业系统和第三方 SaaS 时，任何一个服务超时、失败或结果异常，都会表现为 agent 没完成任务。'
+    },
+    {
+      title: '工具越多，runtime 越难维护',
+      text: '服务数量增长后，靠人工分类、关键词规则和硬编码选择工具，很快会变成维护成本和稳定性风险。'
+    }
+  ],
+  differences: [
+    ['不是工具市场', '重点不是陈列更多工具，而是让外部服务进入 agent runtime 后可治理、可匹配、可稳定调用。'],
+    ['不是普通 API 网关', '不只统一入口，还覆盖服务理解、状态监控、routing、fallback 和执行链路可观测。'],
+    ['不是固定 Workflow', '不是把流程写死，而是在多任务、多服务、多状态下支撑动态选择和稳定执行。'],
+    ['不是单纯网络加速', 'X-net 服务于外部服务调用的可达性、路径选择和任务级执行稳定性。']
+  ],
+  modules: [
+    {
+      icon: Network,
+      title: 'Agent Gateway',
+      label: '统一入口',
+      text: '把 MCP、API、Skill、Workflow、Agent Service 接入到统一调用入口，减少逐个服务对接。'
+    },
+    {
+      icon: Radar,
+      title: '推荐引擎',
+      label: '服务匹配',
+      text: '基于任务意图、Tool Metadata、语义理解和 Query 改写，帮助 agent 找到更合适的服务。'
+    },
+    {
+      icon: Boxes,
+      title: '能力仓库',
+      label: '服务治理',
+      text: '对外部服务做筛选、适配、schema 优化、版本兼容、状态监控和 fallback 治理。'
+    },
+    {
+      icon: Route,
+      title: 'X-net',
+      label: 'routing',
+      text: '面向跨地域、多服务调用链路，提供网络状态感知、routing 和服务调度支撑。'
+    },
+    {
+      icon: CloudCog,
+      title: '服务托管运营平台',
+      label: '供给侧',
+      text: '让外部服务更容易被接入、托管、标准化，并转化为 agent 可稳定调用的 capability。'
+    }
+  ],
+  scenarios: [
+    {
+      title: 'Agent 产品从 demo 进入上线',
+      text: 'AI assistant、vertical agent、workflow agent 开始调用搜索、文件、数据、支付、消息和业务 API。',
+      result: '更快接入更多服务，减少 connector 维护。'
+    },
+    {
+      title: '企业内部 agent 调业务系统',
+      text: '客服、销售、运营、财务 agent 需要访问 CRM、ERP、工单、数据库、文件系统和内部 API。',
+      result: '把权限、接口、状态和调用链路纳入治理。'
+    },
+    {
+      title: '工具平台 / MCP 平台服务数量增长',
+      text: '平台已经有大量工具，但服务质量、metadata、schema、权限和 fallback 难以长期维护。',
+      result: '把工具数量转化为可执行、可治理的服务能力。'
+    },
+    {
+      title: '出海 AI 产品跨地域调用服务',
+      text: '用户、agent runtime、文件源、外部 API 和 SaaS 系统分布在不同地区，延迟和可达性影响任务完成。',
+      result: '通过 X-net、routing 与 fallback 降低跨地域不确定性。'
+    }
+  ],
+  poc: [
+    ['选一条真实链路', '例如：查询数据 -> 生成结果 -> 写入业务系统，或者搜索 -> 文件处理 -> 调用 SaaS。'],
+    ['列出服务清单', '明确涉及哪些 MCP、API、Skill、Workflow、Agent Service，以及当前失败点。'],
+    ['看任务级指标', '不要只看单次 API 延迟，重点看任务完成率、失败原因、fallback 效果和维护成本。'],
+    ['决定是否规模化接入', '如果稳定性、接入效率或维护成本改善明显，再扩展到更多服务和场景。']
+  ]
+};
+
 function App() {
-  const site = copy[currentLang];
+  if (currentPage === 'zh-cn') {
+    return <ChinaSecondVersion />;
+  }
+
+  const site = copy[currentPage];
 
   return (
     <main className={site.langClass}>
@@ -735,6 +836,198 @@ function App() {
       <ResourcesSection site={site} />
       <CtaSection site={site} />
       <Footer site={site} />
+    </main>
+  );
+}
+
+function ChinaSecondVersion() {
+  return (
+    <main className="cn2">
+      <header className="cn2-header">
+        <a className="cn2-brand" href="#top" aria-label="AgentEarth 国内版">
+          <span className="brand-mark">
+            <span />
+          </span>
+          <span>AgentEarth</span>
+        </a>
+        <nav aria-label="第二中文版导航">
+          {cn2.nav.map((item) => (
+            <a key={item.href} href={item.href}>
+              {item.label}
+            </a>
+          ))}
+        </nav>
+        <div className="cn2-header-actions">
+          <a href="../zh/">原中文版</a>
+          <a href="../">EN</a>
+          <a className="cn2-header-cta" href="#contact">
+            联系销售
+          </a>
+        </div>
+      </header>
+
+      <section id="top" className="cn2-hero">
+        <div className="container cn2-hero-grid">
+          <div className="cn2-hero-copy">
+            <div className="cn2-eyebrow">第二中文版 · 面向国内客户阅读习惯</div>
+            <h1>
+              <span>让 agent 稳定调用外部服务</span>
+              <span>不再靠一次性 connector 撑业务。</span>
+            </h1>
+            <p>
+              当 agent 开始查询数据、处理文件、调用企业系统、连接 SaaS 和执行业务流程，真正的瓶颈会从“模型会不会回答”，转向“外部服务能不能被长期稳定调用”。
+            </p>
+            <div className="cn2-actions">
+              <a className="cn2-primary" href="#poc">
+                看验证路径
+                <ArrowRight size={18} />
+              </a>
+              <a className="cn2-secondary" href="#product">
+                看产品能力
+              </a>
+            </div>
+          </div>
+          <div className="cn2-diagnosis">
+            <div className="cn2-diagnosis-head">
+              <span>是否需要 AgentEarth</span>
+              <strong>判断信号</strong>
+            </div>
+            {cn2.heroSignals.map((signal) => (
+              <div className="cn2-signal" key={signal}>
+                <Check size={17} />
+                <span>{signal}</span>
+              </div>
+            ))}
+            <div className="cn2-visual" aria-hidden="true" />
+          </div>
+        </div>
+      </section>
+
+      <section id="problems" className="cn2-section cn2-problems">
+        <div className="container">
+          <div className="cn2-section-head">
+            <span>核心判断</span>
+            <h2>国内 agent 团队缺的不是“更多工具”，而是外部服务进入 runtime 后的治理能力。</h2>
+            <p>
+              接一个服务通常不难，难的是服务数量增加、任务链路变长、客户场景变复杂之后，仍然能让 agent 稳定完成真实任务。
+            </p>
+          </div>
+          <div className="cn2-pressure-grid">
+            {cn2.pressureCards.map((card, index) => (
+              <article key={card.title} className="cn2-pressure-card">
+                <strong>{String(index + 1).padStart(2, '0')}</strong>
+                <h3>{card.title}</h3>
+                <p>{card.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="cn2-section cn2-compare">
+        <div className="container cn2-split">
+          <div>
+            <div className="cn2-eyebrow">先把边界说清楚</div>
+            <h2>AgentEarth 不是把现有互联网能力简单打包给 agent。</h2>
+            <p>
+              国内客户最关心的是：这个平台到底解决哪一层问题，会不会被 API 聚合、工具市场、工作流平台或模型厂商内建吃掉。AgentEarth 的位置是外部服务 execution layer。
+            </p>
+          </div>
+          <div className="cn2-difference-list">
+            {cn2.differences.map(([title, text]) => (
+              <article key={title}>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="product" className="cn2-section cn2-product">
+        <div className="container">
+          <div className="cn2-section-head">
+            <span>产品结构</span>
+            <h2>从“接上工具”升级为“治理一组可执行的外部服务”。</h2>
+            <p>
+              第二中文版不从国际化官网的模块介绍出发，而按国内客户的采购和落地逻辑组织：先统一入口，再做服务匹配、服务治理、routing 和供给侧运营。
+            </p>
+          </div>
+          <div className="cn2-module-grid">
+            {cn2.modules.map((module) => (
+              <article key={module.title} className="cn2-module">
+                <div className="cn2-module-icon">
+                  <module.icon size={22} />
+                </div>
+                <span>{module.label}</span>
+                <h3>{module.title}</h3>
+                <p>{module.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="scenarios" className="cn2-section cn2-scenarios">
+        <div className="container">
+          <div className="cn2-section-head">
+            <span>适用场景</span>
+            <h2>当外部服务开始影响任务完成率，就适合评估 AgentEarth。</h2>
+          </div>
+          <div className="cn2-scenario-grid">
+            {cn2.scenarios.map((scenario) => (
+              <article key={scenario.title} className="cn2-scenario">
+                <h3>{scenario.title}</h3>
+                <p>{scenario.text}</p>
+                <strong>{scenario.result}</strong>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="poc" className="cn2-section cn2-poc">
+        <div className="container cn2-split">
+          <div>
+            <div className="cn2-eyebrow">验证方式</div>
+            <h2>不要做泛泛试用，用一条真实外部服务执行链路验证。</h2>
+            <p>
+              AgentEarth 的价值不应该用“工具数量”验证，而应该用真实 agent 任务链路中的接入效率、调用成功率、失败定位、fallback 效果和长期维护成本验证。
+            </p>
+          </div>
+          <div className="cn2-poc-list">
+            {cn2.poc.map(([title, text], index) => (
+              <article key={title}>
+                <span>{index + 1}</span>
+                <div>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="cn2-final">
+        <div className="container cn2-final-box">
+          <div>
+            <span>下一步</span>
+            <h2>选择 1 条真实调用链路，判断 AgentEarth 是否能降低接入、治理和稳定执行成本。</h2>
+          </div>
+          <a href="mailto:contact@agentearth.ai?subject=AgentEarth%20%E5%9B%BD%E5%86%85%E7%89%88%E5%9C%BA%E6%99%AF%E8%AF%84%E4%BC%B0">
+            预约场景评估
+            <Handshake size={18} />
+          </a>
+        </div>
+      </section>
+
+      <footer className="cn2-footer">
+        <div className="container">
+          <strong>AgentEarth</strong>
+          <span>面向 agent 外部服务调用的 execution layer · 第二中文版</span>
+        </div>
+      </footer>
     </main>
   );
 }
