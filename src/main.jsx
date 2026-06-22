@@ -49,6 +49,7 @@ const copy = {
       { label: 'Solutions', href: '#solutions' },
       { label: 'Developers', href: '#developers' },
       { label: 'Trust', href: '#trust' },
+      { label: 'Readiness', href: '#readiness' },
       { label: 'Resources', href: '#resources' }
     ],
     header: {
@@ -348,32 +349,71 @@ const copy = {
     },
     resources: {
       eyebrow: 'Resources',
-      title: 'Move from overview to evaluation.',
+      title: 'Evaluation assets for enterprise buyers and agent platform teams.',
       text:
-        'Use AgentEarth when external services already affect task completion rate, user experience, engineering maintenance, or global execution stability.',
+        'Use these materials when external services already affect task completion rate, user experience, engineering maintenance, or global execution stability.',
       cards: [
         {
           icon: FileText,
-          title: 'Product Overview',
-          text: 'A customer-readable explanation of AgentEarth as an external service execution platform for agents.',
-          cta: 'Read overview',
+          title: 'Executive briefing',
+          text: 'Category definition, architecture boundary, buyer roles, and where AgentEarth fits in the agent execution stack.',
+          cta: 'Request briefing',
           href: '#contact'
         },
         {
           icon: Workflow,
-          title: 'Scenario Solutions',
-          text: 'Use-case maps for agent products, enterprise AI teams, global AI apps, and tool-heavy platforms.',
-          cta: 'Explore scenarios',
+          title: 'Scenario map',
+          text: 'Evaluation maps for agent products, enterprise AI teams, global AI apps, and tool-heavy platforms.',
+          cta: 'Request scenario map',
           href: '#contact'
         },
         {
           icon: Code2,
-          title: 'Developer Docs',
+          title: 'Integration docs',
           text:
-            'Connect through MCP or Skill API, receive tool recommendations, execute with returned schemas, and inspect results.',
+            'Connect through MCP or Skill API, receive recommendations, execute with returned schemas, and inspect results.',
           cta: 'Open docs',
           href: 'https://www.agentearth.ai/docs'
         }
+      ]
+    },
+    readiness: {
+      eyebrow: 'Enterprise readiness',
+      title: 'What enterprise teams verify before making AgentEarth part of agent runtime.',
+      text:
+        'The evaluation should prove more than connector coverage. It should show whether external service execution can be governed, observed, routed, and expanded without pushing brittle logic back into every agent application.',
+      pillars: [
+        {
+          icon: ShieldCheck,
+          title: 'Security and access control',
+          text:
+            'Map service permissions, API keys, tenant boundaries, approval flows, and execution policies before expanding service coverage.'
+        },
+        {
+          icon: Activity,
+          title: 'Observability and failure analysis',
+          text:
+            'Trace failed calls, fallback decisions, service health, latency, provider status, and task outcome changes in one execution view.'
+        },
+        {
+          icon: Route,
+          title: 'Routing and fallback policy',
+          text:
+            'Define when an agent should retry, switch providers, use a backup capability, or return a controlled failure state.'
+        },
+        {
+          icon: CloudCog,
+          title: 'Provider operations',
+          text:
+            'Keep service metadata, schema compatibility, version drift, availability, and provider quality under continuous operation.'
+        }
+      ],
+      checklistTitle: 'POC acceptance criteria',
+      checklist: [
+        'A real task chain with two or more external services is connected.',
+        'Current failure modes and maintenance costs are documented before testing.',
+        'Completion rate, latency, fallback hit rate, and cost per successful task are measured.',
+        'Expansion rules are clear before adding more service categories.'
       ]
     },
     evaluation: {
@@ -417,6 +457,7 @@ const copy = {
       { label: '解决方案', href: '#solutions' },
       { label: '开发者', href: '#developers' },
       { label: '信任与治理', href: '#trust' },
+      { label: '企业验证', href: '#readiness' },
       { label: '资源', href: '#resources' }
     ],
     header: {
@@ -708,31 +749,66 @@ const copy = {
     },
     resources: {
       eyebrow: 'Resources',
-      title: '从产品理解进入场景验证。',
+      title: '面向企业买方和 agent 平台团队的评估材料。',
       text:
-        '当外部服务已经影响任务完成率、用户体验、工程维护成本或全球化执行稳定性时，就适合评估 AgentEarth。',
+        '当外部服务已经影响任务完成率、用户体验、工程维护成本或全球化执行稳定性时，应把评估从产品理解推进到真实链路验证。',
       cards: [
         {
           icon: FileText,
-          title: '产品概览',
-          text: '面向客户解释 AgentEarth 如何作为 agent 的外部服务 execution platform。',
-          cta: '阅读概览',
+          title: '管理层 briefing',
+          text: '说明 AgentEarth 的 category、架构边界、买方角色，以及它在 agent execution stack 中的位置。',
+          cta: '索取 briefing',
           href: '#contact'
         },
         {
           icon: Workflow,
-          title: '场景解决方案',
-          text: '覆盖 agent 产品、企业 AI 团队、全球化 AI 应用和多工具平台的 use case map。',
-          cta: '查看场景',
+          title: '场景评估图',
+          text: '覆盖 agent 产品、企业 AI 团队、全球化 AI 应用和多工具平台的 evaluation map。',
+          cta: '索取场景图',
           href: '#contact'
         },
         {
           icon: Code2,
-          title: '开发者文档',
-          text: '通过 MCP 或 Skill API 接入，获取工具推荐，按 schema 执行，并检查返回结果。',
+          title: '集成文档',
+          text: '通过 MCP 或 Skill API 接入，获取 recommendation，按 schema 执行，并检查返回结果。',
           cta: '打开文档',
           href: 'https://www.agentearth.ai/docs'
         }
+      ]
+    },
+    readiness: {
+      eyebrow: 'Enterprise readiness',
+      title: '企业在把 AgentEarth 放进 agent runtime 前，应该验证什么。',
+      text:
+        '评估不应只证明 connector 覆盖数量，而要证明外部服务 execution 能否被治理、观测、routing 和扩展，同时不把脆弱逻辑重新推回每个 agent 应用。',
+      pillars: [
+        {
+          icon: ShieldCheck,
+          title: '安全与权限控制',
+          text: '在扩展服务覆盖前，先明确服务权限、API key、租户边界、审批流程和 execution policy。'
+        },
+        {
+          icon: Activity,
+          title: '可观测与失败分析',
+          text: '在统一 execution view 中追踪失败调用、fallback 决策、服务健康、延迟、provider 状态和任务结果变化。'
+        },
+        {
+          icon: Route,
+          title: 'Routing 与 fallback 策略',
+          text: '定义 agent 什么时候重试、切换 provider、使用备用 capability，或者返回受控失败状态。'
+        },
+        {
+          icon: CloudCog,
+          title: 'Provider operations',
+          text: '持续运营服务 metadata、schema 兼容、版本漂移、可用性和 provider 质量。'
+        }
+      ],
+      checklistTitle: 'POC 验收标准',
+      checklist: [
+        '接入一条真实任务链路，且包含两个以上外部服务。',
+        '测试前记录当前失败模式和维护成本。',
+        '衡量完成率、延迟、fallback 命中率和 Cost per Successful Task。',
+        '在扩展更多服务类别前，明确扩展规则与治理责任。'
       ]
     },
     evaluation: {
@@ -799,6 +875,7 @@ const cn2 = {
     { label: '边界', href: '#boundary' },
     { label: '产品', href: '#product' },
     { label: '场景', href: '#scenarios' },
+    { label: '售前', href: '#materials' },
     { label: '验证', href: '#poc' }
   ],
   heroStats: [
@@ -909,6 +986,24 @@ const cn2 = {
     ['技术前提', '明确涉及的 MCP、API、Workflow、权限方式、调用频率和失败日志。'],
     ['验证指标', '看任务完成率、失败定位时间、fallback 命中、维护成本和扩展复杂度。'],
     ['边界说明', '不替代模型、不替代业务系统、不承诺所有外部服务质量由平台单方面控制。']
+  ],
+  materials: [
+    ['售前诊断表', '梳理当前 agent 调用链路、服务清单、权限方式、失败点和已有 connector 维护成本。'],
+    ['POC 指标表', '把任务完成率、失败定位时间、fallback 命中、延迟、成本和人工介入次数变成验收项。'],
+    ['集成边界说明', '明确 AgentEarth 接入哪些 MCP、API、Workflow、Agent Service，以及不接入哪些业务系统。'],
+    ['扩展路线图', '从第一条链路扩展到更多 capability category，定义治理责任、服务运营和扩展节奏。']
+  ],
+  notFit: [
+    ['只做一次 demo', '如果目标只是短期展示，而不是让 agent 长期执行真实外部服务，AgentEarth 的治理价值无法充分体现。'],
+    ['只有一个稳定内部 API', '如果调用链路单一、稳定、权限简单，现有内部接口管理可能已经足够。'],
+    ['没有外部服务失败压力', '如果任务不受服务状态、schema drift、限流、跨地域可达性影响，暂时不需要 execution layer。'],
+    ['不需要 fallback 和 observability', '如果业务允许 agent 调用失败后直接中断，平台级 routing 与观测价值会被弱化。']
+  ],
+  decisionQuestions: [
+    '当前 agent 任务失败，有多少来自模型以外的外部服务调用？',
+    '服务数量增长后，谁负责 metadata、schema、权限和版本变化？',
+    '是否需要在多个 provider / capability 之间做 routing 与 fallback？',
+    'POC 成功后，能否复制到更多业务线和服务类别？'
   ]
 };
 
@@ -930,6 +1025,7 @@ function App() {
       <SolutionsSection site={site} />
       <DevelopersSection site={site} />
       <TrustSection site={site} />
+      <EnterpriseReadinessSection site={site} />
       <ResourcesSection site={site} />
       <EvaluationSection site={site} />
       <CtaSection site={site} />
@@ -1116,6 +1212,49 @@ function ChinaSecondVersion() {
                 <p>{text}</p>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="materials" className="cn2-section cn2-materials">
+        <div className="container">
+          <div className="cn2-section-head">
+            <span>售前评估材料</span>
+            <h2>国内 To B 客户需要看到的不是“功能很多”，而是评估、验收和扩展边界清楚。</h2>
+            <p>
+              AgentEarth 适合用可交付材料推进决策：先定义链路、指标、集成范围和不适合场景，再判断是否进入规模化接入。
+            </p>
+          </div>
+          <div className="cn2-material-grid">
+            {cn2.materials.map(([title, text]) => (
+              <article key={title}>
+                <FileText size={20} />
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </article>
+            ))}
+          </div>
+          <div className="cn2-fit-grid">
+            <div>
+              <h3>不适合优先评估 AgentEarth 的情况</h3>
+              <div className="cn2-fit-list">
+                {cn2.notFit.map(([title, text]) => (
+                  <article key={title}>
+                    <strong>{title}</strong>
+                    <p>{text}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+            <div className="cn2-question-panel">
+              <h3>采购和技术评审应先问清楚</h3>
+              {cn2.decisionQuestions.map((question) => (
+                <div key={question}>
+                  <CircleDot size={15} />
+                  <span>{question}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -1554,6 +1693,36 @@ function TrustSection({ site }) {
             <span />
             <span />
             <span />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function EnterpriseReadinessSection({ site }) {
+  return (
+    <section id="readiness" className="section readiness-section">
+      <div className="container">
+        <SectionHeading {...site.readiness} />
+        <div className="readiness-grid">
+          <div className="readiness-pillars">
+            {site.readiness.pillars.map((pillar) => (
+              <article key={pillar.title}>
+                <IconBox icon={pillar.icon} />
+                <h3>{pillar.title}</h3>
+                <p>{pillar.text}</p>
+              </article>
+            ))}
+          </div>
+          <div className="readiness-checklist">
+            <span>{site.readiness.checklistTitle}</span>
+            {site.readiness.checklist.map((item) => (
+              <div key={item}>
+                <Check size={16} />
+                <p>{item}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
